@@ -1,4 +1,6 @@
 import icons from 'url:../img/icons.svg';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 const recipeContainer = document.querySelector('.recipe');
 
@@ -27,10 +29,14 @@ const renderSpinner = function (parentEl) {
 
 const showRecipe = async function () {
   try {
+    const id = window.location.hash.slice(1);
+
+    if (!id) return;
+
     // 1) Loading recipe
     renderSpinner(recipeContainer);
     const res = await fetch(
-      'https://forkify-api.jonas.io/api/v2/recipes/5ed6604591c37cdc054bc886'
+      `https://forkify-api.jonas.io/api/v2/recipes/${id}`
       // 'https://forkify-api.jonas.io/api/v2/recipes/664c8f193e7aa067e94e863d'
     );
     const data = await res.json();
@@ -49,7 +55,6 @@ const showRecipe = async function () {
       cookingTime: recipe.cooking_time,
       ingredients: recipe.ingredients,
     };
-    console.log(recipe);
 
     // 2) Rendering the recipe
     const markup = `
@@ -125,7 +130,7 @@ const showRecipe = async function () {
       <div class="recipe__directions">
         <h2 class="heading--2">How to cook it</h2>
         <p class="recipe__directions-text">
-          This recipe was carefully designed andtested by
+          This recipe was carefully designed and tested by
           <span class="recipe__publisher">${
             recipe.publisher
           }</span>. Please check out
@@ -150,4 +155,6 @@ const showRecipe = async function () {
   }
 };
 
-showRecipe();
+['hashchange', 'load'].forEach(ev => window.addEventListener(ev, showRecipe));
+// window.addEventListener('hashchange', showRecipe);
+// window.addEventListener('load', showRecipe);
