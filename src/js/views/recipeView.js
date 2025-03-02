@@ -3,6 +3,8 @@ import fracty from 'fracty';
 
 class RecipeView {
   #data;
+  #errorMessage = 'We could not find that recipe. Please try another one!';
+  #message = '';
   #parentElement = document.querySelector('.recipe');
 
   render(data) {
@@ -26,6 +28,40 @@ class RecipeView {
     `;
     this.#clear();
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  renderError(message = this.#errorMessage) {
+    const markup = `
+      <div class="error">
+        <div>
+          <svg>
+            <use href="${icons}#icon-alert-triangle"></use>
+          </svg>
+        </div>
+        <p>${message}</p>
+      </div>
+    `;
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  renderMessage(message = this.#message) {
+    const markup = `
+      <div class="message">
+        <div>
+          <svg>
+            <use href="${icons}#icon-smile"></use>
+          </svg>
+        </div>
+        <p>${message}</p>
+      </div>
+    `;
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  addHandlerRender(handler) {
+    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 
   #generateMarkup() {
@@ -55,7 +91,7 @@ class RecipeView {
           <span class="recipe__info-data recipe__info-data--people">${
             this.#data.servings
           }</span>
-          <span class="recipe__info-text">servings<span>
+          <span class="recipe__info-text">servings</span>
           <div class="recipe__info-buttons">
             <button class="btn--tiny btn--increase-servings">
               <svg>
