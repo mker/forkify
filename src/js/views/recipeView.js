@@ -30,7 +30,7 @@ class RecipeView extends View {
   }
 
   _generateMarkup() {
-    return `
+    return /*html*/ `
       <figure class="recipe__fig">
         <img src="${this._data.image}" alt="${
       this._data.title
@@ -116,7 +116,7 @@ class RecipeView extends View {
   }
 
   _generateMarkupIngredient(ing) {
-    return `
+    return /*html*/ `
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
           <use href="${icons}#icon-check"></use>

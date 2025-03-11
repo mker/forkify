@@ -109,7 +109,7 @@ const init = function () {
 
 init();
 
-// Clear for development and debug
+// Clear bookmarks for development and debug
 const clearBookmarks = function () {
   localStorage.clear('bookmarks');
 };
