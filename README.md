@@ -12,11 +12,14 @@ Forkify is about searching vaious food recipes and showing them on the page.
 - Go to the original recipe page via Directions button
 - Increase/decrease the number of servings in recipe, reactive ingredients list
 
+<img width='1000' alt='forkify-preview' src='./src/assets/forkify-preview-1.png'>
+
 ## How to run locally
 
-- Clone the repo:
+- Clone the repo
+```js
 git clone https://github.com/mker/forkify.git
-
+```
 - Install dependencies
 ```js
 npm install
