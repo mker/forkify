@@ -2,14 +2,14 @@
 
 Live demo of [Forkify](https://forkify-v2.netlify.app/)
 
-Forkify is about searching vaious food recipes and showing them on the page.
+Forkify is a food recipe searching app where you can upload a custom recipe as well.
 
 # Features
 
-- See the recipe, its details like cooking time and components
+- View the recipe, details like cooking time and components
 - Add recipe to Bookmarks dropdown list
 - Make and add your own recipe 
-- Go to the original recipe page via Directions button
+- Go to the original recipe website via Directions button
 - Increase/decrease the number of servings in recipe, reactive ingredients list
 
 <img width='1000' alt='forkify-preview' src='./src/assets/forkify-preview-1.png'>
