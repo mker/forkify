@@ -6,7 +6,7 @@ Forkify is a recipe app where you can search new recipes from various sources an
 
 # Features
 
-- See the recipe, its details like cooking time and components
+- View the recipe, details like cooking time and components
 - Add recipe to Bookmarks dropdown list
 - Make and add your own recipe
 - Go to the original recipe page via Directions button
