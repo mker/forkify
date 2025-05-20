@@ -1,6 +1,6 @@
 # Recipe search app Forkify (JavaScript MVC)
 
-Live demo of [Forkify](https://forkify-v2.netlify.app/)
+[Forkify live demo](https://forkify-mker.netlify.app/)
 
 Forkify is a recipe app where you can search new recipes from various sources and upload your custom ones.
 
